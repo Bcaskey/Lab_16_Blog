@@ -3,16 +3,19 @@ import BaseService from '../base/base.svc';
 
 export default class BlogService extends BaseService {
 
-    getAllPosts(): async.IThenable<Array<models.IBlog>> {
-        return this.http.json<Array<models.IBlog>>({
-            method: 'GET',
-            url: this.host + '/posts'
-        }).then((success) => {
-            return success.response;
-        });
-    }
+getAllPosts(): async.IAjaxThenable<Array<models.IBlog>> {
+    return this.http.json<Array<models.IBlog>>(
+        {
+        method: 'GET',
+        url: this.host + '/posts'
+    }).then((success) => {
+        return success.response;
+    }, (err) => {
+        console.log(err);
+    });
+}
     
-    getSinglePost(id: string): async.IThenable<Array<models.IBlog>> {
+    getSinglePost(id: string): async.IAjaxThenable<Array<models.IBlog>> {
         return this.http.json({
             method: 'GET',
             url: this.host + '/posts/' + id
@@ -21,14 +24,17 @@ export default class BlogService extends BaseService {
         });
     }
     
-    NewPost(myPost:models.IBlog): async.IThenable<Array<models.IBlog>> {
+    NewPost(myPost:models.IBlog): async.IAjaxThenable<string> {
         return this.http.json({
             method: 'POST',
             url: this.host + '/posts',
-            data: 'json',
+            data: myPost
         }).then((success) => {
             return success.response;
-        });
+        }, (err) => {
+            console.log(err);//throw lets us know that a console log was not successfull, like resending error
+            throw err; //Without throw it just continues running, as if successful, after console.log
+        }); // throw confirms to the rest of the chain, an error happened.
     }
 }
 

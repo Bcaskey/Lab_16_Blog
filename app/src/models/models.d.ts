@@ -4,6 +4,6 @@ declare module models {
         author: string;
         content: string;
         createdAt?: string;
-        id?: string;
+        id?: Date;
     }
 }

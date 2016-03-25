@@ -7,14 +7,11 @@ export default class SingBlogViewControl extends BaseViewControl {
     templateString: string = require('./singblog.vc.html');
 
     context: any = {
-        blogs: {}
+        blogs: <models.IBlog>{}
     };
-    
-    
     constructor(private blogRepo: BlogRepository) {
         super();
     }
-
     navigatedTo(parameters: any, query: any){
         let id = parameters.id;
         this.blogRepo.getSinglePost(id).then(
