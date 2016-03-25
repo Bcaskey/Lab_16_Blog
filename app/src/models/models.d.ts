@@ -3,7 +3,7 @@ declare module models {
         title: string;
         author: string;
         content: string;
-        createdAt: string;
-        id: string;
+        createdAt?: string;
+        id?: string;
     }
 }

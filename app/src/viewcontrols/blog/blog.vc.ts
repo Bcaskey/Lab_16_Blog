@@ -1,6 +1,7 @@
 import {register} from 'platypus';
 import BaseViewControl from '../base/base.vc';
-import BlogRepository from '../../Repositories/blog/blog.repo'
+import BlogRepository from '../../Repositories/blog/blog.repo';
+import SingViewControl from '../singblog/singblog.vc';
 
 
 export default class BlogViewControl extends BaseViewControl {
@@ -8,7 +9,8 @@ export default class BlogViewControl extends BaseViewControl {
 
     context = {
         blogs: <Array<models.IBlog>>[],
-        username: ''
+        username: '',
+        singleView: SingViewControl
     };
     
     constructor(private blogRepo: BlogRepository) {
@@ -21,7 +23,7 @@ export default class BlogViewControl extends BaseViewControl {
         this.blogRepo.getAllPosts().then(
             (success) => {
                 this.context.blogs = success;
-                // console.log(success);
+                console.log(success);
             }, (err) => {
                 console.log(err);
             }

@@ -12,9 +12,9 @@ export default class BlogRepository extends BaseRepository {
         return this.blogService.getAllPosts();
     }
     
-    // getSinglePost(id: string): async.IThenable<Array<any>> {
-    //     return this.blogService.getSinglePost(id);
-    // }
+    getSinglePost(id: string): async.IThenable<Array<any>> {
+        return this.blogService.getSinglePost(id);
+    }
 
 }
 

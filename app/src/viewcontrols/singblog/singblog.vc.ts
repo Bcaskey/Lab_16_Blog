@@ -6,28 +6,24 @@ export default class SingBlogViewControl extends BaseViewControl {
     templateString: string = require('./singblog.vc.html');
 
     context: any = {
-        blogs: [],
+        blogs: {}
     };
     
     
     constructor(private blogRepo: BlogRepository) {
         super();
     }
-     
-    // navigatedTo(parameters: any, query: any){
-    //     let id = parameters.id;
-        
-    //     this.blogRepo.getSinglePost(id).then(
-    //         (success) => {
-    //             this.context.blogs = success;
-    //             // console.log(success);
-    //         }, (err) => {
-    //             console.log(err);
-    //         }
-    //     );
-    // }
+
+    navigatedTo(parameters: any, query: any){
+        let id = parameters.id;
+        this.blogRepo.getSinglePost(id).then(
+            (success) => {
+                this.context.blogs = success;
+            }, (err) => {
+                console.log(err);
+            }
+        );
+    }
 }
-
-
 
 register.viewControl('singblog-vc', SingBlogViewControl, [BlogRepository]);
