@@ -21,10 +21,11 @@ export default class BlogService extends BaseService {
         });
     }
     
-    NewPost(): async.IThenable<Array<models.IBlog>> {
+    NewPost(myPost:models.IBlog): async.IThenable<Array<models.IBlog>> {
         return this.http.json({
             method: 'POST',
-            url: this.host + '/posts'
+            url: this.host + '/posts',
+            data: 'json',
         }).then((success) => {
             return success.response;
         });

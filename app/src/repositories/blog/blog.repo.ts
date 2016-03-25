@@ -8,16 +8,16 @@ export default class BlogRepository extends BaseRepository {
         super();
     }
 
-    getAllPosts(): async.IThenable<Array<any>> {
+    getAllPosts(): async.IThenable<Array<models.IBlog>> {
         return this.blogService.getAllPosts();
     }
     
-    getSinglePost(id: string): async.IThenable<Array<any>> {
+    getSinglePost(id: string): async.IThenable<Array<models.IBlog>> {
         return this.blogService.getSinglePost(id);
     }
 
-    NewPost(): async.IThenable<Array<any>> {
-        return this.blogService.NewPost();
+    NewPost(myPost:models.IBlog): async.IThenable<Array<models.IBlog>> {
+        return this.blogService.NewPost(myPost);
     }
 }
 
