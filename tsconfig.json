@@ -22,8 +22,13 @@
         "app/src/app/app.ts",
         "app/src/main.ts",
         "app/src/repositories/base/base.repo.ts",
+        "app/src/repositories/blog/blog.repo.ts",
         "app/src/services/base/base.svc.ts",
+        "app/src/services/blog/blog.svc.ts",
         "app/src/viewcontrols/base/base.vc.ts",
-        "app/src/viewcontrols/home/home.vc.ts"
+        "app/src/viewcontrols/blog/blog.vc.ts",
+        "app/src/viewcontrols/home/home.vc.ts",
+        "app/src/viewcontrols/newblog/newblog.vc.ts",
+        "app/src/viewcontrols/singblog/singblog.vc.ts"
     ]
 }

@@ -56,4 +56,5 @@ The Platypus Blog will have all the same components as previous blog versions bu
 	- ComposePostViewControl - includes form to submit posts and navigate back to list view when complete.
     - SinglePostViewControl - should display a single blog post (use a route parameter)
 	- ViewControl should call functions from the repository when necessary to handle actions
+	- on view all, title: author: content: createdAt: id:
 
