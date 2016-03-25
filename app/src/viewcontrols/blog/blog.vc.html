@@ -4,15 +4,13 @@
 <h1>All blogs page</h1>
 
     <plat-foreach plat-context="blogs">
-        <span id="blgId">{{id}} </span>
-        <span id="blgTitle">{{title}}:  </span>
-        <span id="blgAuthor">{{author}}:  </span>
-        <span id="blogContent">{{content}}:  </span>
-        <span id="blogCreated">{{createdAt}}:</span><br>
+        <plat-link plat-options="{SingBlogViewControl, parameters: {id: id}}"><span id="Id">{{id}} </span></plat-link>
+        <span id="title">{{title}}:  </span>
+        <span id="author">{{author}}:  </span>
+        <span id="content">{{content}}:  </span>
+        <span id="created">{{createdAt}}:</span><br>
     </plat-foreach>
-<p>
-    <plat-button plat-tap="SingleBlog(id)" >View Single Post</button>
-</p>
+
 <p>
     <plat-button>Create new post</button>
 </p>

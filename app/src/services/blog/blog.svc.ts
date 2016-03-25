@@ -12,14 +12,14 @@ export default class BlogService extends BaseService {
         });
     }
     
-    getSinglePost(params: id): async.IThenable<Array<models.IBlog>> {
-        return this.http.json({
-            method: 'GET',
-            url: this.host + '/posts/' + params
-        }).then((success) => {
-            return success.response;
-        });
-    }
+    // getSinglePost(id: string): async.IThenable<Array<models.IBlog>> {
+    //     return this.http.json({
+    //         method: 'GET',
+    //         url: this.host + '/posts/' + id
+    //     }).then((success) => {
+    //         return success.response;
+    //     });
+    // }
    
 }
 

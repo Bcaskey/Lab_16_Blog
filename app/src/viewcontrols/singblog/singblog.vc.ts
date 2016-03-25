@@ -14,18 +14,18 @@ export default class SingBlogViewControl extends BaseViewControl {
         super();
     }
      
-    navigatedTo(parameters: any, query: any){
-        let id = parameters.id;
+    // navigatedTo(parameters: any, query: any){
+    //     let id = parameters.id;
         
-        this.blogRepo.getSinglePost(id).then(
-            (success) => {
-                this.context.blogs = success;
-                // console.log(success);
-            }, (err) => {
-                console.log(err);
-            }
-        );
-    }
+    //     this.blogRepo.getSinglePost(id).then(
+    //         (success) => {
+    //             this.context.blogs = success;
+    //             // console.log(success);
+    //         }, (err) => {
+    //             console.log(err);
+    //         }
+    //     );
+    // }
 }
 
 
