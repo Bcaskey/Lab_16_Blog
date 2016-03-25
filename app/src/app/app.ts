@@ -1,8 +1,8 @@
 import {App, events, register, routing, web} from 'platypus';
 import HomeViewControl from '../viewcontrols/home/home.vc';
 import BlogViewControl from '../viewcontrols/blog/blog.vc';
-// import NewBlogViewControl from '../viewcontrols/newblog/newblog.vc';
 import SingBlogViewControl from '../viewcontrols/Singblog/Singblog.vc';
+import NewBlogViewControl from '../viewcontrols/newblog/newblog.vc';
 
 
 export default class MyApp extends App {
@@ -14,8 +14,8 @@ export default class MyApp extends App {
         router.configure([
             { pattern: '', view: HomeViewControl },
             { pattern: 'blog/:username', view: BlogViewControl },
-            // { pattern: 'newblog/', view: NewBlogViewControl }
-            { pattern: 'singblog/:id', view: SingBlogViewControl }
+            { pattern: 'singblog/:id', view: SingBlogViewControl },
+            { pattern: 'newblog/', view: NewBlogViewControl }
         ]);
     }
 

@@ -2,6 +2,7 @@ import {register} from 'platypus';
 import BaseViewControl from '../base/base.vc';
 import BlogRepository from '../../Repositories/blog/blog.repo';
 import SingViewControl from '../singblog/singblog.vc';
+import NewViewControl from '../newblog/newblog.vc';
 
 
 export default class BlogViewControl extends BaseViewControl {
@@ -35,6 +36,11 @@ export default class BlogViewControl extends BaseViewControl {
             parameters: {
                 id: id
             }
+        });
+    }
+    
+    NewBlog(): void {
+        this.navigator.navigate('newblog-vc', {
         });
     }
 }

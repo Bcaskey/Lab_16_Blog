@@ -16,6 +16,9 @@ export default class BlogRepository extends BaseRepository {
         return this.blogService.getSinglePost(id);
     }
 
+    NewPost(): async.IThenable<Array<any>> {
+        return this.blogService.NewPost();
+    }
 }
 
 register.injectable('blog-repo', BlogRepository, [BlogService]);

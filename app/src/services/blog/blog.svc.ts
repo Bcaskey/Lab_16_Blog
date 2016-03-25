@@ -20,6 +20,15 @@ export default class BlogService extends BaseService {
             return success.response;
         });
     }
+    
+    NewPost(): async.IThenable<Array<models.IBlog>> {
+        return this.http.json({
+            method: 'POST',
+            url: this.host + '/posts'
+        }).then((success) => {
+            return success.response;
+        });
+    }
 }
 
 register.injectable('blog-svc', BlogService);
