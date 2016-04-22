@@ -1,3 +1,7 @@
+<plat-resources>
+    <injectable alias="format">formatter</injectable>
+</plat-resources>
+
 <h1>Greetings, {{username}}</h1>
 
 
@@ -8,7 +12,7 @@
         <span id="title">{{title}}:  </span>
         <span id="author">{{author}}:  </span>
         <span id="content">{{content}}:  </span>
-        <span id="created">{{createdAt}}:</span><br>
+        <span id="created">{{@format.formatDate(createdAt)}}:</span><br>
     </plat-foreach>
 
 <p>
